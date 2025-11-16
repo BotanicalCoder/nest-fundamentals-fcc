@@ -1,0 +1,25 @@
+### SEND SONG REQUEST
+GET http://localhost:3111/songs
+
+### Find a song by id
+GET http://localhost:3111/songs/1
+
+### Create New Song
+POST http://localhost:3111/songs
+Content-Type: application/json
+
+{
+  "title": "Song Title",
+  "artist": ["Artist 1"],
+  "releaseDate": "2022-01-01",
+  "duration": "03:00",
+  "genre": "Rock",
+  "album": "Album Name",
+  "credits": ["Credit 1", "Credit 2"]
+}
+
+### Update Song
+PUT http://localhost:3111/songs/1
+
+### Delete Song
+DELETE http://localhost:3111/songs/1
