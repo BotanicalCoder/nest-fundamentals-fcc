@@ -23,3 +23,16 @@ PUT http://localhost:3111/songs/1
 
 ### Delete Song
 DELETE http://localhost:3111/songs/1
+
+### Create playlist
+POST http://localhost:3111/playlists
+
+Content-Type:application/json
+
+{
+  "name": "feel good music",
+  "songs":[
+    6
+  ],
+  "user":1
+}

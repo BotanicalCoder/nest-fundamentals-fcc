@@ -4,9 +4,9 @@ import type { Connection } from 'src/common/constants/connection';
 
 @Injectable()
 export class SongsService {
-  constructor(@Inject('CONNECTION') private connection: Connection) {
-    console.log(this.connection.DB_NAME);
-  }
+  // constructor(@Inject('CONNECTION') private connection: Connection) {
+  //   console.log(this.connection.DB_NAME);
+  // }
 
   // local db ( an array )
 

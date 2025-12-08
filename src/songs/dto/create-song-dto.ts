@@ -3,6 +3,7 @@ import {
   IsDateString,
   IsMilitaryTime,
   IsNotEmpty,
+  IsNumber,
   IsString,
 } from 'class-validator';
 
@@ -12,13 +13,12 @@ export class CreateSongDto {
   readonly title: string;
 
   @IsNotEmpty()
-  @IsArray({
-    each: true,
-  })
-  readonly artist: string[];
+  @IsArray()
+  @IsNumber({}, {each:true})
+  readonly artist: number[];
 
-  @IsDateString()
   @IsNotEmpty()
+  @IsDateString()
   readonly releaseDate: Date;
 
   @IsMilitaryTime()
