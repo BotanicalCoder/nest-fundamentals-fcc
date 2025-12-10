@@ -24,8 +24,6 @@ export class PlaylistsService {
     async create (playListDTO: CreatePlayListDTO): Promise <Playlist>{        
         const playlist = new Playlist();
 
-        console.log(playListDTO)
-
         playlist.name = playListDTO.name;
 
         // songs would be an array of the song ids form the DTO object

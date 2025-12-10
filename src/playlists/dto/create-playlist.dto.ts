@@ -1,17 +1,16 @@
 import { IsArray, IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator";
 
 export class CreatePlayListDTO {
-    // @IsString()
-    // @IsNotEmpty()
+    @IsString()
+    @IsNotEmpty()
     readonly name: string;
 
-    // @IsNotEmpty()
-    // @IsArray()
+    @IsNotEmpty()
+    @IsArray()
     @IsNumber({}, { each: true })
     readonly songs: string[];
 
-    // @IsNumber()
-    // @IsNotEmpty()
-    @IsOptional()
+    @IsNumber()
+    @IsNotEmpty()
     readonly user: number;
 }
