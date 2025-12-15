@@ -10,12 +10,13 @@ Content-Type: application/json
 
 {
   "title": "Song Title",
-  "artist": ["Artist 1"],
+  "artists": [1],
   "releaseDate": "2022-01-01",
   "duration": "03:00",
   "genre": "Rock",
   "album": "Album Name",
-  "credits": ["Credit 1", "Credit 2"]
+  "credits": ["Credit 1", "Credit 2"],
+  "lyrics": "Rocka bye"
 }
 
 ### Update Song

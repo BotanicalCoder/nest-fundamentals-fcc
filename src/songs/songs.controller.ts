@@ -17,6 +17,7 @@ import { CreateSongDto } from './dto/create-song-dto';
 import { Song } from './song.entity';
 import { Pagination } from 'nestjs-typeorm-paginate';
 import { UpdateSongDTO } from './dto/update-song-dto';
+import { DeleteResult, UpdateResult } from 'typeorm';
 
 @Controller('songs')
 export class SongsController {
@@ -54,7 +55,7 @@ export class SongsController {
         errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE,
       }),
     )
-    id: string,
+    id: number,
   ) {
    return this.songsService.findOne(id)
   }
@@ -73,6 +74,6 @@ export class SongsController {
 
   @Delete(':id')
   delete(@Param('id', ParseIntPipe) id: number):Promise<DeleteResult> {
-    return `delete a song by id: ${id}`;
+    return this.songsService.remove(id);
   }
 }

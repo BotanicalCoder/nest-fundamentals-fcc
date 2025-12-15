@@ -1,5 +1,5 @@
-import { ConsoleLogger, Injectable } from '@nestjs/common';
-import { DeleteResult, Repository, UpdateResult } from 'typeorm';
+import {  Injectable } from '@nestjs/common';
+import { DeleteResult, In, Repository, UpdateResult } from 'typeorm';
 import {
   paginate,
   Pagination,
@@ -34,7 +34,7 @@ export class SongsService {
     console.log(songDTO.artists);
 
     // find all the artits on the based on ids
-    const artists = await this.artistsRepository.findByIds(songDTO.artists);
+    const artists = await this.artistsRepository.findBy({id:In(songDTO.artists)});
  
     //set the relation with artist and songs
     song.artists = artists;
