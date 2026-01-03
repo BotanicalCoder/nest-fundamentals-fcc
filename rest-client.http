@@ -9,8 +9,8 @@ POST http://localhost:3111/songs
 Content-Type: application/json
 
 {
-  "title": "Song Title",
-  "artists": [1],
+  "title": "baby boo",
+  "artists": [1,2],
   "releaseDate": "2022-01-01",
   "duration": "03:00",
   "genre": "Rock",

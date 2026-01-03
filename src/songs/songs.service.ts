@@ -31,8 +31,6 @@ export class SongsService {
     song.lyrics = songDTO.lyrics;
     song.releasedDate = songDTO.releaseDate;
 
-    console.log(songDTO.artists);
-
     // find all the artits on the based on ids
     const artists = await this.artistsRepository.findBy({id:In(songDTO.artists)});
  

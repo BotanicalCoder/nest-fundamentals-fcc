@@ -11,6 +11,8 @@ import { LoggerMiddleware } from './common/middleware/logger/logger.middleware';
 import { Playlist } from './playlists/playlist.entity';
 // import { DataSource } from 'typeorm';
 import { PlaylistsModule } from './playlists/playlists.module';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -25,7 +27,7 @@ import { PlaylistsModule } from './playlists/playlists.module';
       synchronize: true,
     }),
     SongsModule,    
-    PlaylistsModule,
+    PlaylistsModule, AuthModule, UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
