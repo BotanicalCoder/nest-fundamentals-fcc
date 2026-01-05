@@ -37,3 +37,14 @@ Content-Type:application/json
   ],
   "user":1
 }
+
+### Signup Artist
+POST http://localhost:3111/auth/signup
+Content-Type: application/json
+
+{
+    "firstName": "Martin",
+    "lastName": "Garrix",
+    "email": "martingarrix@gmail.com",
+    "password": "123456"
+}
