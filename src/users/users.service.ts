@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './user.entity';
 import { Repository } from 'typeorm';
@@ -20,5 +20,16 @@ export class UsersService {
         const user = await this.userRepository.save(userDTO);
         delete (user as Partial<User>).password;
         return user;
+    }
+
+    async findOne (loginDto: Partial<User>): Promise<User>{
+        const user = await this.userRepository.findOneBy({email: loginDto.email})
+        if (!user){
+            throw new UnauthorizedException("Could not find user");
+        }
+
+        else {
+            return user;
+        }
     }
 }
