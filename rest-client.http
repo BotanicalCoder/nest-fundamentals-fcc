@@ -48,3 +48,13 @@ Content-Type: application/json
     "email": "martingarrix@gmail.com",
     "password": "123456"
 }
+
+
+### login
+POST http://localhost:3111/auth/login
+Content-Type: application/json
+
+{    
+  "email": "martingarrix@gmail.com",
+  "password": "123456"
+}
