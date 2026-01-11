@@ -23,7 +23,7 @@ export class AuthController {
     login(
         @Body()
         loginDto: LoginDTO
-    ):Promise <User>{
+    ):Promise <{token:string}>{
         return this.authService.login(loginDto)
     }
 }
